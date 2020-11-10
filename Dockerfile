@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi8/nodejs-12:1-52 AS builder
 
-RUN yum install -y python38
+# RUN yum install -y python38
 
 WORKDIR /opt/app-root/src
 
