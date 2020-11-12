@@ -1,4 +1,5 @@
-FROM registry.access.redhat.com/ubi8/nodejs-12:1-52 AS builder
+#FROM registry.access.redhat.com/ubi8/nodejs-12:1-52 AS builder
+FROM registry.access.redhat.com/ubi8/nodejs-12:latest AS builder
 
 USER 0
 RUN yum install -y python38
@@ -11,7 +12,8 @@ COPY . .
 RUN ls -lA && npm install
 RUN npm run build
 
-FROM registry.access.redhat.com/ubi8/nodejs-12:1-52
+#FROM registry.access.redhat.com/ubi8/nodejs-12:1-52
+FROM registry.access.redhat.com/ubi8/nodejs-12:latest
 
 COPY --from=builder /opt/app-root/src/dist dist
 COPY --from=builder /opt/app-root/src/public public
