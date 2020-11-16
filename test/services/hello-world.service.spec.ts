@@ -22,13 +22,13 @@ describe('Hello World service', () =>{
     context('when "Juan" provided', () => {
       const name = 'Juan';
       test('then return "Witaj, Juan!"', async () => {
-        expect(await service.greeting(name)).toEqual(`Hello, ${name}!`);
+        expect(await service.greeting(name)).toEqual(`Witaj, ${name}!`);
       });
     });
 
     context('when no name provided', () => {
       test('then return "Witaj, World!"', async () => {
-        expect(await service.greeting()).toEqual('Hello, World!');
+        expect(await service.greeting()).toEqual('Witaj, World!');
       });
     })
   });
