@@ -2,6 +2,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-12:latest AS builder
 
 USER 0
+RUN yum update -y
 RUN yum install -y python38
 
 USER 1001
